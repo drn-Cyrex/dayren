@@ -1,0 +1,120 @@
+.hp-products h2 {
+    line-height: calc($hp-index * 5);
+}
+
+.hp-products-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-top: calc($hp-index * 5.5);
+    gap: 5rem 1.5rem;
+    opacity: 0;
+    animation: hpProductCards;
+    animation-timeline: view();
+    animation-range: 10%;
+}
+@keyframes hpProductCards {
+    to {
+        opacity: 1;
+    }
+}
+@media (max-width: 540px) {
+    .hp-products-container {
+        opacity: 1;
+    }
+}
+
+.hp-product-card {
+    position: relative;
+    width: clamp(12rem, 10.571rem + 7.14vw, 17rem);
+    height: clamp(10rem, 9.143rem + 4.29vw, 13rem);
+    border-radius: 0.5rem;
+    background-color: $hp-container-color;
+    &::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        bottom: -2px;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        border-radius: 0.5rem;
+        transition: 1.25s ease;
+    }
+}
+
+.hp-product-card:nth-child(1):hover::before {
+    background-color: gray;
+}
+.hp-product-card:nth-child(2):hover::before {
+    background-color: red;
+}
+.hp-product-card:nth-child(3):hover::before {
+    background-color: darkgoldenrod;
+}
+.hp-product-card:nth-child(4):hover::before {
+    background-color: blue;
+}
+.hp-product-card:nth-child(5):hover::before {
+    background-color: bisque;
+}
+
+@media (max-width: 540px) {
+    .hp-product-card {
+        opacity: 0;
+        transform: scale(0.3);
+        animation: hpProductCard forwards;
+        animation-timeline: view();
+        animation-range: entry 0 cover 40%;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+@keyframes hpProductCard {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hp-product-card img {
+    position: absolute;
+    width: 60%;
+    top: calc($hp-index * -4);
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+    .hp-product-card img {
+        top: calc($hp-index * -5.5);
+    }
+}
+
+.hp-product-content {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+}
+
+.hp-product-content h3 {
+    font-size: 1rem;
+    color: white;
+}
+
+.hp-product-content div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hp-product-content div button {
+    color: white;
+    font-size: 1.25rem;
+    background-color: black;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.35rem;
+}

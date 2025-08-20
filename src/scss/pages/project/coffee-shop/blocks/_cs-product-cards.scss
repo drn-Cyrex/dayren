@@ -1,0 +1,32 @@
+.cs-product-cards {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cs-product-cards__info {
+  margin-top: calc($cs-index * 5);
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    font-size: clamp(1.9rem, 0.786rem + 3.57vw, 4rem);
+    line-height: 109%;
+    text-align: center;
+    color: $cs-color-accent;
+  }
+
+  p {
+    width: 35%;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: clamp(1rem, 0.857rem + 0.71vw, 1.5rem);
+    text-align: center;
+    color: $cs-color-text;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cs-product-cards__info p {
+    width: 100%;
+  }
+}

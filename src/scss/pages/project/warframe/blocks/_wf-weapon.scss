@@ -1,0 +1,167 @@
+.wf-weapons {
+    position: relative;
+    padding-block: 3rem;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.wf-weapon {
+    position: relative;
+    height: 300px;
+    width: 200px;
+    margin: 1rem;
+    background-color: transparent;
+    background-image: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.5),
+        transparent,
+        rgba(0, 0, 0, 0.55)
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    border-image: linear-gradient(
+            45deg,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent
+        )
+        1;
+}
+
+.wf-weapon span {
+    position: absolute;
+    transform: scale(1.3);
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+}
+
+.wf-weapon-primary span {
+    animation: wfPrimary 20s linear infinite;
+}
+@keyframes wfPrimary {
+    0%,
+    10% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/BoltorPrime.png");
+    }
+
+    15%,
+    25% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/CorinthPrime.png");
+    }
+
+    30%,
+    40% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/CrpBriefcaseLauncher.png");
+    }
+
+    45%,
+    55% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/SanctiTigris.png");
+    }
+
+    60%,
+    70% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/SynoidSimulor.png");
+    }
+    75%,
+    85% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/ZarimanPumpShotgun.png");
+    }
+
+    90%,
+    100% {
+        background-image: url("../../../img/catalog/Warframe/weapon/primary/BoltorPrime.png");
+    }
+}
+
+.wf-weapon-secondary span {
+    animation: wfSecondary 20s 1s linear infinite;
+}
+@keyframes wfSecondary {
+    0%,
+    10% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/Amphis.png");
+    }
+
+    15%,
+    25% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/BallisticaPrime.png");
+    }
+
+    30%,
+    40% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/GrnVorStickyBomb.png");
+    }
+
+    45%,
+    55% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/LatoVandal.png");
+    }
+
+    60%,
+    70% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/TwinGrakatas.png");
+    }
+    75%,
+    85% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/ZarimanHeavyPistol.png");
+    }
+
+    90%,
+    100% {
+        background-image: url("../../../img/catalog/Warframe/weapon/secondary/Amphis.png");
+    }
+}
+
+.wf-weapon-melee span {
+    animation: wfMelee 20s 2s linear infinite;
+}
+@keyframes wfMelee {
+    0%,
+    10% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/ArcaTitron.png");
+    }
+
+    15%,
+    25% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/BallasSwordExilis.png");
+    }
+
+    30%,
+    40% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/Cerata.png");
+    }
+
+    45%,
+    55% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/CrpShockWhip.png");
+    }
+
+    60%,
+    70% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/GarudaDeluxeClaws.png");
+    }
+    75%,
+    85% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/MoonWarfan.png");
+    }
+
+    90%,
+    100% {
+        background-image: url("../../../img/catalog/Warframe/weapon/melee/ArcaTitron.png");
+    }
+}
+
+.wf-weapon h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20%;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px white;
+}

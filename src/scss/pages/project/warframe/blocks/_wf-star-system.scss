@@ -1,0 +1,10 @@
+.wf-star-system {
+	position: relative;
+	z-index: 50;
+    margin-top: calc($wf-index * 2.5);
+    aspect-ratio: 16/9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px -30px 20px -10px black,0px 30px 20px -10px black;
+}

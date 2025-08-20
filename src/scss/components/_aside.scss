@@ -1,0 +1,46 @@
+aside {
+    position: absolute;
+    top: 0;
+    width: $dynamic-size;
+    height: 100%;
+    padding-top: $dynamic-size;
+    backdrop-filter: blur(10px);
+    @include flex-center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.aside-decoration {
+    flex: 1 0 0;
+    width: 100%;
+    background-image: url(../img/dist/decoration.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.aside-social {
+    flex: 1 0 0;
+}
+
+.aside-social a {
+    //display: inline-block;
+    width: clamp(2.188rem, 1.563rem + 2.083vw, 3.438rem);
+    height: clamp(2.188rem, 1.563rem + 2.083vw, 3.438rem);
+    margin: calc($index * 0.5);
+    @include flex-center;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: $deep;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    font-size: 1.5em;
+    transition: $transition;
+
+    &:hover i {
+        scale: 1.5;
+        transform: translateZ(25px);
+        color: rgba(255, 255, 255, 1);
+    }
+}

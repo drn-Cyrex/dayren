@@ -1,0 +1,44 @@
+.hp-sponsor {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%,);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc($hp-index * 2);
+    animation: hpSponsor 2s forwards;
+}
+@media (max-width: 1024px) {
+    .hp-sponsor {
+        margin-top: 4rem;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 767px) {
+    .hp-sponsor {
+        margin: 1rem 0;
+    }
+}
+@keyframes hpSponsor {
+    0% {
+        opacity: 0;
+        scale: 0.7;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.hp-sponsor img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    width: 7rem;
+    margin: 0 1rem;
+}
+.hp-sponsor img:nth-child(3) {
+    padding-top: 1rem;
+}

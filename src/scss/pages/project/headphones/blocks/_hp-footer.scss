@@ -1,0 +1,126 @@
+.hp-footer {
+  width: 95%;
+  margin: auto;
+  padding-top: calc($hp-index * 5);
+  padding-bottom: calc($hp-index * 5);
+  gap: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hp-footer-top {
+  width: 50%;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 1024px) {
+  .hp-footer {
+    flex-wrap: wrap;
+     justify-content: space-around;
+  }
+
+  .hp-footer-top {
+    width: 100%;
+  }
+
+  .hp-footer-logo {
+    display: none;
+  }
+}
+
+.hp-footer-logo img {
+  width: 2rem;
+}
+
+.hp-footer-content h3 {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.hp-footer-links {
+  margin-left: 1rem;
+}
+
+.hp-footer-links li {
+  padding: 0.1rem 0;
+  color: gray;
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.hp-footer-bottom {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 1024px) {
+  .hp-footer-bottom {
+    width: 100%;
+  }
+}
+
+// FORM
+.hp-footer-wrapper {
+  width: 20rem;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  .hp-footer-wrapper {
+    //flex-direction: column;
+  }
+}
+
+.hp-footer-form {
+  position: relative;
+  left: 7rem;
+  padding: calc($hp-index * 1);
+  background-color: $hp-container-color;
+  border-radius: 0.5rem;
+
+  input {
+    position: relative;
+    width: 50%;
+    color: white;
+    background-color: $hp-container-color;
+  }
+
+  input::placeholder {
+    color: $hp-text-color;
+  }
+
+  button {
+    background-color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.hp-footer-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.hp-footer-social a {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: $hp-container-color;
+  transition: background-color 0.75s ease-out;
+
+  &:hover {
+    background-color: black;
+  }
+}

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$hp-index: calc(1vw + 1vh);
+
+// COLOR
+$hp-hue-color: 206;
+$hp-text-color: hsl($hp-hue-color, 4%, 75%);
+$hp-body-color: hsl($hp-hue-color, 4%, 6%);
+$hp-container-color: hsl($hp-hue-color, 4%, 10%);
+$hp-text-gradient: line-gradient(hsl($hp-hue-color, 4%, 24%)),
+	hsl($hp-hue-color, 4%, 8%);
+
+// FONT AND TYPOGRAPHY
+$hp-body-font: "Poppins", sans-serif;
+$hp-bigger-font-size: 3.5rem;
+$hp-normal-font-size: 0.938rem;
+
+
+
+.hp-body {
+	position: relative;
+	width: 80vw;
+	margin: 0 auto;
+	scroll-behavior: smooth;
+	color: white;
+	font-family: $hp-body-font;
+	font-size: $hp-normal-font-size;
+	background-color: $hp-body-color;
+	color: $hp-text-color;
+}
+
+.hp-main {
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.hp-section-tittle {
+	font-size: $hp-bigger-font-size;
+	text-align: center;
+	margin-bottom: calc($hp-index * 1);
+}
+
+.hp-section-title__gradient {
+	color: transparent;
+	background: $hp-text-gradient;
+	background-clip: text;
+}
+
+.hp-title-gradient {
+	margin-top: calc($hp-index * 1);
+	text-align: center;
+	color: transparent;
+	background: linear-gradient(0deg,
+			rgba(0, 0, 0, 0.5) 0%,
+			rgb(59, 59, 59) 100%);
+	background-clip: text;
+	font-size: clamp(4rem, 3.143rem + 4.29vw, 7rem);
+	animation: hpTitle;
+	animation-timeline: view();
+	animation-range: entry 0 cover 40%;
+}
+
+@keyframes hpTitle {
+	0% {
+		opacity: 0;
+		transform: translateY(13rem);
+	}
+
+	20% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hp-animation-normal {
+	animation-range: normal !important;
+}

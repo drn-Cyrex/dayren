@@ -1,0 +1,74 @@
+.hp-case-container {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hp-case-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hp-case-img img {
+    opacity: 0;
+    filter: blur(1rem);
+    transform: translateY(5rem);
+    animation: hpCaseImg forwards;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%;
+}
+@keyframes hpCaseImg {
+    to {
+        opacity: 1;
+        filter: blur(0) drop-shadow(0px 0px 5px rgba(50, 50, 50))
+            drop-shadow(0px 0px 15px rgb(50, 50, 50))
+            drop-shadow(0px 0px 30px rgb(50, 50, 50));
+        transform: translateY(0);
+    }
+}
+
+.hp-case-data {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    animation: hpCaseData;
+    animation-timeline: view();
+    animation-range: entry;
+}
+@keyframes hpCaseData {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hp-case-data p {
+    width: 70%;
+}
+@media (max-width: 767px) {
+    .hp-case-data p {
+        width: 100%;
+    }
+}
+
+.hp-case-data a {
+    position: relative;
+    left: -20%;
+    padding: 5px 0;
+    color: white;
+    border-bottom: 1px solid gray;
+}
+
+.case-btn {
+    margin-right: 0.5rem;
+}

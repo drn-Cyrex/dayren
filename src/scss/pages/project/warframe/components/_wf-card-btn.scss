@@ -1,0 +1,72 @@
+.wf-card__btn {
+   position: absolute;
+   left: -5%;
+   bottom: -2.5%;
+   transition: 0.25s ease;
+
+   a {
+      position: relative;
+      padding-block: 0.7rem;
+      padding-inline: 1.75rem;
+      color: white;
+      background-image: linear-gradient(90deg, black 10%, transparent 50%);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.25s ease;
+
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         transition: 0.25s ease;
+      }
+
+      &::before {
+         z-index: -10;
+         height: 160%;
+         width: 120%;
+         left: 5%;
+         clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+      }
+
+      &::after {
+         z-index: -5;
+         height: 125%;
+         width: 110%;
+         left: 5%;
+         clip-path: polygon(0% 0%, 79% 0%, 100% 100%, 0% 100%);
+      }
+   }
+}
+
+.wf-card:nth-child(1) .wf-card-desc .wf-card__btn a::before {
+   background-image: linear-gradient(90deg, $wf-color-exc 20%, black);
+}
+.wf-card:nth-child(1) .wf-card-desc .wf-card__btn a::after {
+   background-image: linear-gradient(90deg, black, $wf-color-exc 60%);
+}
+
+.wf-card:nth-child(2) .wf-card-desc .wf-card__btn a::before {
+   background-image: linear-gradient(90deg, $wf-color-mag 20%, black);
+}
+.wf-card:nth-child(2) .wf-card-desc .wf-card__btn a::after {
+   background-image: linear-gradient(90deg, black, $wf-color-mag 60%);
+}
+
+.wf-card:nth-child(3) .wf-card-desc .wf-card__btn a::before {
+   background-image: linear-gradient(90deg, $wf-color-volt 20%, black);
+}
+.wf-card:nth-child(3) .wf-card-desc .wf-card__btn a::after {
+   background-image: linear-gradient(90deg, black, $wf-color-volt 60%);
+}
+
+@media (any-hover: hover) {
+   .wf-card__btn a:hover::before {
+      width: 100%;
+   }
+   .wf-card__btn a:hover:after {
+      left: 15%;
+   }
+}

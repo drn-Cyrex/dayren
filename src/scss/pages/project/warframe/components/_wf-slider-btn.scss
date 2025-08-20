@@ -1,0 +1,84 @@
+.wf-slider-button {
+   position: relative;
+   transition: 0.25s ease;
+
+   a {
+      position: relative;
+      padding-block: 0.75rem;
+      padding-inline: 1.25rem;
+      //padding-block: clamp(0.6rem, 0.571rem + 0.14vw, 0.7rem);
+      //padding-inline: clamp(1.05rem, 0.85rem + 1vw, 1.75rem);
+      color: oklch(1 0 0);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: 0.25s ease;
+
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         transition: 0.25s ease;
+      }
+
+      &::before {
+         z-index: -10;
+         height: 160%;
+         width: 120%;
+      }
+
+      &::after {
+         z-index: -5;
+         height: 120%;
+         width: 110%;
+      }
+   }
+
+   &:nth-child(1) a {
+      background-image: linear-gradient(90deg, black 10%, transparent 50%);
+   }
+
+   &:nth-child(1) a::before {
+      left: 5%;
+      background-image: linear-gradient(90deg, $wf-color-accent, black);
+      clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+   }
+
+   &:nth-child(1) a::after {
+      left: 5%;
+      background-image: linear-gradient(90deg, black, $wf-color-accent 50%);
+      clip-path: polygon(0% 0%, 79% 0%, 100% 100%, 0% 100%);
+   }
+
+   &:nth-child(2) a {
+      background-image: linear-gradient(-90deg, black 10%, transparent 50%);
+   }
+
+   &:nth-child(2) a::before {
+      right: 5%;
+      background-image: linear-gradient(-90deg, $wf-color-accent, black);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 30% 100%);
+   }
+
+   &:nth-child(2) a::after {
+      right: 5%;
+      background-image: linear-gradient(-90deg, black, $wf-color-accent 50%);
+      clip-path: polygon(1% 0%, 100% 0%, 100% 100%, 25% 100%);
+   }
+
+   @media (any-hover: hover) {
+      a:hover::before {
+         width: 100%;
+      }
+
+      &:nth-child(1) a:hover:after {
+         left: 15%;
+      }
+      &:nth-child(2) a:hover:after {
+         right: 15%;
+      }
+   }
+}

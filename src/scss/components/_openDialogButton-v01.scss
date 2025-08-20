@@ -1,0 +1,60 @@
+// .button-v1{
+//   position: relative;
+//   display: inline-block;
+//   width: clamp(9.375rem, 8.125rem + 6.25vw, 13.75rem);
+//   height: clamp(2.5rem, 2.143rem + 1.79vw, 3.75rem);
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 85%;
+//     height: clamp(3.5rem, 3.214rem + 1.43vw, 4.5rem);
+//     z-index: -10;
+//     background-color: $accent;
+//     opacity: 0.3;
+//     transition: 0.25s ease-out;
+//   }
+
+//   a {
+//     position: absolute;
+//     inset: 0;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background: rgba(255, 255, 255, 0.05);
+//     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+//     border-left: 1px solid rgba(255, 255, 255, 0.2);
+//     z-index: 1;
+//     color: white;
+//     font-size: $font-size;
+//     font-family: $user-font;
+//     letter-spacing: 1px;
+//     overflow: hidden;
+//     transition: 0.55s ease-out;
+//     backdrop-filter: blur(15px);
+//   }
+//   a:hover {
+//     letter-spacing: 2px;
+//     transition: 0.25s ease-out;
+//   }
+
+//   a::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 50%;
+//     height: 100%;
+//     background: linear-gradient(to left, rgba(255, 255, 255, 0.2), transparent);
+//     transform: skew(145deg) translateX(0);
+//     transition: 1s ease-out;
+//   }
+
+//   &:hover a::before {
+//     transition-delay: 0.25s;
+//     transform: skewX(45deg) translateX(1000%);
+//   }
+// }

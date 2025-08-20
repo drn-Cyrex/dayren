@@ -1,0 +1,126 @@
+:root {
+   interpolate-size: allow-keywords;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+:focus {
+   outline: none;
+}
+
+:focus-visible {
+ //  outline: 2px solid $wf-color-accent;
+   outline-offset: 3px;
+}
+
+// FONT AND TYPOGRAPHY
+
+//
+$wf-header-size: clamp(3.625rem, 3.482rem + 0.71vw, 4.125rem);
+
+$wf-index: calc(1vw + 1vh);
+
+// COLOR
+$wf-color-white: oklch(1 0 0);
+$wf-color-black: oklch(0.3 0 0);
+$wf-color-accent: oklch(0.503 0.1323 172.17);
+$wf-color-exc: oklch(0.3903 0.1448 12.51);
+$wf-color-mag: oklch(0.2253 0.0908 259.77);
+$wf-color-volt: oklch(0.3015 0.1499 299.77);
+$wf-color-1999: #005745;
+
+// TITLE
+$wf-line-height-title: 1.25;
+$wf-letter-spacing-title: 2px;
+$wf-font-size-title: 2.5rem;
+// TEXT
+$wf-line-height-text: 1.6;
+$wf-letter-spacing-text: 1px;
+$wf-font-size-text: 1rem;
+
+// BUTTONS
+$wf-btn-height: 2.75rem;
+
+$wf-transition: cubic-bezier(1, 1, 0, 1);
+
+.wf-body {
+   color: white;
+   font-family: "Gruppo", sans-serif;
+   overflow-x: clip;
+}
+
+.wf-body *::selection {
+   color: black;
+   background-color: $wf-color-accent;
+}
+
+.wf-body :is(h1, h2, h3) {
+   font-size: $wf-font-size-title;
+
+   line-height: $wf-line-height-title;
+   letter-spacing: $wf-letter-spacing-title;
+}
+.wf-body :is(p) {
+   line-height: $wf-line-height-text;
+   letter-spacing: $wf-letter-spacing-text;
+   font-size: $wf-font-size-text;
+}
+
+.wf-main {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+// SECTION TEXT ANIMATION
+.wf-section-desc {
+   padding-top: calc($wf-index * 2.5);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1.25rem;
+}
+
+.wf-section-desc h2 {
+   opacity: 0;
+   // letter-spacing: 1em;
+   text-align: center;
+   animation: wfDescTitle forwards;
+   animation-timeline: view();
+   animation-range: entry 0 cover 40%;
+}
+@keyframes wfDescTitle {
+   100% {
+      opacity: 1;
+      // letter-spacing: 0em;
+   }
+}
+
+.wf-section-desc p {
+   transform: translateY(-5rem) scale(0.5);
+   width: clamp(18rem, 9.714rem + 41.43vw, 47rem);
+   margin: 0 auto;
+   opacity: 0;
+   text-align: center;
+   text-wrap: balance;
+   font-size: 1.1rem;
+   animation: wfDescText forwards;
+   animation-timeline: view();
+   animation-range: entry 0 cover 33%;
+}
+@keyframes wfDescText {
+   to {
+      transform: translateY(0rem) scale(1);
+      opacity: 1;
+   }
+}

@@ -1,0 +1,241 @@
+.cs-header {
+  height: clamp(2.5rem, 2.214rem + 1.43vw, 3.5rem);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cs-container {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+@media (max-width: 1024px) {
+  .cs-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding-inline: 1rem;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+  }
+}
+
+.cs-header-logo {
+  height: 100%;
+  width: clamp(5rem, 2.786rem + 5.57vw, 7.8rem);
+}
+
+.cs-header-content {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  gap: calc($cs-index);
+}
+
+@media (max-width: 1024px) {
+  .cs-header-content {
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+}
+
+.cs-nav-list {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  visibility: hidden;
+
+  li {
+    position: relative;
+    height: 100%;
+    color: $cs-color-accent;
+    font-weight: 500;
+    visibility: visible;
+    transition: 0.25s ease;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}
+@media (any-hover: hover) {
+  .cs-nav-list:hover > :not(:hover) {
+    opacity: 0.5;
+    scale: .9;
+  }
+}
+
+.cs-header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cs-button-basket {
+  width: clamp(2.5rem, 2.214rem + 1.43vw, 3.5rem);
+  height: clamp(2.5rem, 2.214rem + 1.43vw, 3.5rem);
+  border-radius: 100%;
+  box-shadow: 0 30px 60px 0 rgba(163, 168, 178);
+}
+
+@media (any-hover: hover) {
+  .cs-button-basket img:hover {
+    transform: scale(1.1);
+  }
+}
+
+// DROPDOWN MENU
+@media (max-width: 1024px) {
+  .cs-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    opacity: 0;
+    background-image: linear-gradient(180deg, white, black 80%);
+    transform: translateY(-100%);
+    transition: 1.25s $cs-cubic;
+  }
+
+  .cs-nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+    li {
+      position: relative;
+      height: 3rem;
+      width: 100%;
+      color: $cs-color-light;
+      opacity: 0;
+      transform: translateY(90vh);
+      transition: 1.5s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 7px;
+        width: 0%;
+        height: 1px;
+        background-image: radial-gradient(
+          at 50% 0,
+          black 0%,
+          white 50%,
+          transparent 80%
+        );
+        transition: 1s $cs-cubic;
+        transition-delay: 1s;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+//  ACTIVE DROPDOWN MENU
+.active-cs-nav {
+  top: -2vh;
+  opacity: 1;
+  transform: translateY(0%);
+
+  .cs-nav-list li {
+    opacity: 1;
+    transform: translateY(0);
+
+    &::after {
+      width: 60%;
+    }
+
+    &:nth-child(1) {
+      transition-delay: 0.01s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.05s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.09s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.13s;
+    }
+  }
+}
+
+// DROPDOWN MENU BUTTON
+.cs-dropdown {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .cs-dropdown {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(2.5rem, 2.136rem + 1.82vw, 3.5rem);
+    height: 80%;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    transition: 0.5s ease-out;
+
+    span {
+      position: absolute;
+      width: 80%;
+      height: 2px;
+      background-color: $cs-color-accent;
+      transition: 0.25s ease;
+    }
+
+    span:nth-child(1) {
+      top: 25%;
+    }
+    span:nth-child(3) {
+      bottom: 25%;
+    }
+  }
+}
+
+// ACTIVE DROPDOWN MENU BUTTON
+.active-cs-button {
+  background-color: transparent;
+
+  span {
+    background-color: crimson;
+  }
+
+  span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    transform: scale(0);
+  }
+
+  span:nth-child(3) {
+    bottom: 50%;
+    transform: rotate(-45deg);
+  }
+}

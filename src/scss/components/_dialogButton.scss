@@ -1,0 +1,59 @@
+.button-modal {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: clamp(2rem, 0.714rem + 2.679vw, 3.125rem);
+
+    span {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        z-index: 10;
+        color: white;
+        font-size: $font-size;
+        font-family: $user-font;
+        letter-spacing: 1px;
+        overflow: hidden;
+        transition: 0.5s ease-out;
+        backdrop-filter: blur(20px);
+    }
+
+    span:hover {
+        letter-spacing: 5px;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 35%;
+        background-color: $accent;
+        transition: 0.5s ease-out;
+    }
+
+    &::before {
+        bottom: -3px;
+    }
+
+    &::after {
+        top: -3px;
+    }
+
+    &:hover::before {
+        bottom: 0;
+        height: 50%;
+        width: 80%;
+    }
+
+    &:hover::after {
+        top: 0;
+        height: 50%;
+        width: 80%;
+    }
+}

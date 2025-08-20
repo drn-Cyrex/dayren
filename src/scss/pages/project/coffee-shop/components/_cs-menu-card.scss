@@ -1,0 +1,64 @@
+.cs-menu-cards__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 5.5rem;
+}
+@media (max-width: 1024px) {
+  .cs-menu-cards__container {
+    margin-top: 2.5rem;
+  }
+}
+
+.cs-menu-card {
+  position: relative;
+  width: clamp(18rem, 16.286rem + 8.57vw, 24rem);
+  height: clamp(25rem, 22.714rem + 11.43vw, 33rem);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  box-shadow: 0 30px 60px 0 rgba(163, 168, 178, 0.15);
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  gap: calc($cs-index);
+  animation-name: csMenuCard;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+
+  h3 {
+    width: 90%;
+    font-weight: 600;
+    font-size: clamp(1.25rem, 0.964rem + 1.43vw, 2.25rem);
+    color: $cs-color-accent;
+  }
+
+  p {
+    width: 90%;
+    font-weight: 400;
+    font-size: clamp(1rem, 0.857rem + 0.71vw, 1.5rem);
+    color: $cs-color-text;
+  }
+}
+@keyframes csMenuCard {
+  0% {
+    filter: blur(10px);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
+
+.cs-menu-card button {
+  width: clamp(11rem, 10.143rem + 4.29vw, 14rem);
+  height: clamp(3rem, 2.786rem + 1.07vw, 3.75rem);
+  border-radius: 7.88rem;
+  background-color: $cs-color-accent;
+  color: white;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.966rem + 0.17vw, 1.12rem);
+  text-transform: uppercase;
+}

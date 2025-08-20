@@ -1,0 +1,30 @@
+// COLOR
+$accent: brown; // Accent color
+
+$text-color: #333; // Text color
+$dark: #303030;
+$deep: #252525;
+
+// BLOCK SIZE
+$index: calc(1vw + 1vh);
+$dynamic-size: clamp(3.125rem, 2.768rem + 1.79vw, 4.375rem); // vp 320 - 1440
+
+// FONT SIZE
+$dynamic-fontSize: clamp(0.75rem, 0.679rem + 0.357vw, 1rem); // vp 320 - 1440
+$fontSize-title: clamp(2rem, 1.429rem + 2.86vw, 6rem);
+
+$border-opacity: 0.1;
+
+$transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+
+// FONT SETTINGS
+$line-height: 1.7;
+$user-font: poiret, sans-serif;
+$logo-font: dune, sans-serif;
+
+$drn-font: jose, sans-serif;
+$system-font: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+
+// переопределены новые переменные эти удалить и заменить на новые
+//$block-size: clamp(3.125rem, 2.5rem + 2.083vw, 4.375rem);
+$font-size: clamp(0.75rem, 0.679rem + 0.357vw, 1rem);

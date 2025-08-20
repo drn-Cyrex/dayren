@@ -1,0 +1,68 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap");
+
+$cs-fontFamily: "Jost", sans-serif;
+
+// COLORS
+$cs-color-accent: #1b1b1d;
+$cs-color-text: #64646a;
+$cs-color-light: #eeeff1;
+$cs-color-card: #f3f4f5;
+$cs-cubic: cubic-bezier(1, 0, 0, 1);
+
+// BLOCK  SIZE
+$cs-index: calc(1vw + 1vh);
+
+a {
+	color: inherit;
+}
+
+li {
+	list-style-type: none;
+}
+
+.cs-body {
+	display: flex;
+	flex-direction: column;
+	background-color: $cs-color-light;
+	color: $cs-color-accent;
+	font-family: $cs-fontFamily;
+}
+
+.cs-header {
+	flex: 0 0 auto;
+}
+
+.cs-main {
+	flex: 1 0 auto;
+	background-color: white;
+}
+
+.cs-footer {
+	flex: 0 0 auto;
+}
+
+// HEADING BLOCK ANIMATION
+:is(.cs-menu-cards__info, .cs-order-block__content, .cs-product-cards__info, .cs-slider-control) h2 {
+	animation-name: csShowTitle;
+	animation-timeline: view();
+	animation-range: entry 0 cover 33%;
+}
+
+:is(.cs-menu-cards__info, .cs-order-block__content, .cs-product-cards__info) p {
+	animation-name: csShowTitle;
+	animation-timeline: view();
+	animation-range: entry 0 cover 33%;
+}
+
+@keyframes csShowTitle {
+	0% {
+		opacity: 0;
+		transform: translateY(-5rem) scale(0.9);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}

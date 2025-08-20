@@ -1,0 +1,207 @@
+.hp-hero {
+    position: relative;
+    min-height: 85dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hp-hero-img {
+    position: absolute;
+    left: 1rem;
+    width: 15rem;
+    animation: hpShowImgHero 3s forwards;
+}
+@media (max-width: 767px) {
+    .hp-hero-img {
+        position: relative;
+        top: -10.5rem;
+        left: 0;
+    }
+}
+@keyframes hpShowImgHero {
+    0% {
+        transform: translateY(-13rem);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-3rem);
+        filter: drop-shadow(0px 0px 5px rgba(50, 50, 50))
+            drop-shadow(0px 0px 15px rgb(50, 50, 50))
+            drop-shadow(0px 0px 30px rgb(50, 50, 50));
+    }
+}
+
+.hp-hero-header {
+    position: relative;
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .hp-hero-header {
+        position: absolute;
+    }
+}
+
+.hp-hero-header__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: end;
+}
+@media (max-width: 767px) {
+    .hp-hero-header__wrapper {
+        padding-top: 8.5rem;
+        justify-content: center;
+    }
+}
+
+.hp-hero-header__wrapper h1 {
+    position: relative;
+    opacity: 0;
+    filter: blur(10px);
+    color: transparent;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgb(59, 59, 59) 100%
+    );
+    background-clip: text;
+    font-size: clamp(7rem, 6.143rem + 4.29vw, 10rem);
+    animation: hpHeroWrapperH1 3s forwards;
+}
+@media (max-width: 767px) {
+    .hp-hero-header__wrapper h1 {
+        top: -1.5rem;
+        right: -2rem;
+        font-size: clamp(4rem, 3.714rem + 1.43vw, 5rem);
+    }
+}
+@keyframes hpHeroWrapperH1 {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.hp-hero-header__wrapper span {
+    position: absolute;
+    left: -1.5rem;
+    bottom: 1rem;
+    z-index: 20;
+    color: white;
+    font-size: clamp(3rem, 3.714rem + 1.43vw, 5rem);
+}
+@media (max-width: 767px) {
+    .hp-hero-header__wrapper span {
+        top: 2rem;
+        left: -2rem;
+    }
+}
+
+.hp-hero-data__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: end;
+}
+@media (max-width: 1024px) {
+    .hp-hero-data__wrapper {
+        top: 2rem;
+        margin: 0 1rem;
+    }
+}
+
+.hp-hero-data {
+    position: relative;
+    width: 50%;
+}
+@media (max-width: 1024px) {
+    .hp-hero-data {
+        width: 70%;
+        right: 0;
+    }
+}
+@media (max-width: 767px) {
+    .hp-hero-data {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.hp-hero-data h3 {
+    color: white;
+    font-size: 1.5rem;
+    animation: hpShowHeroDataH3 2s forwards;
+}
+@keyframes hpShowHeroDataH3 {
+    0% {
+        opacity: 0;
+        filter: blur(1rem);
+        transform: translateY(10rem);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.hp-hero-data p {
+    margin: 1rem 0;
+    opacity: 0;
+    filter: blur(1rem);
+    transform: scale(0);
+    animation: hpShowHeroDataP 2.25s forwards;
+    animation-delay: 0.75s;
+}
+@media (max-width: 1024px) {
+    .hp-hero-data p {
+        margin: 1rem 3rem;
+        justify-content: end;
+    }
+}
+@media (max-width: 767px) {
+    .hp-hero-data p {
+        margin: 1rem 0.5rem;
+        justify-content: end;
+    }
+}
+@keyframes hpShowHeroDataP {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+.hp-button {
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    animation: hpShowHeroDataButton 2.5s forwards;
+}
+@media (max-width: 1024px) {
+    .hp-button {
+        justify-content: end;
+    }
+}
+
+.hp-button span:nth-child(1) {
+    padding: 5px 0;
+    border-bottom: 1px solid gray;
+}
+
+.hp-button span:nth-child(2) {
+    color: white;
+    animation: hpShowHeroDataButton 2s forwards;
+}
+
+@keyframes hpShowHeroDataButton {
+    0% {
+        opacity: 0;
+        filter: blur(1rem);
+        transform: translateY(10rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

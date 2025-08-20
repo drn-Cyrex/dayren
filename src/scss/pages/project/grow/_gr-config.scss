@@ -1,0 +1,17 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+$gr-fontFamily: "Montserrat", sans-serif;
+// COLORS
+$gr-white-color: #fff;
+$gr-gray-color: #aeb4a6;
+$gr-accent-color: #88f784;
+
+
+$gr-index: calc(1vh + 1vw);
+$gr-transition: cubic-bezier(0.77, 0, 0.175, 1);
+
+.gr-body {
+  font-family: $gr-fontFamily;
+  position: relative;
+  color: $gr-white-color;
+}

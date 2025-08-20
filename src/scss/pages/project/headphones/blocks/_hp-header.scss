@@ -1,0 +1,217 @@
+.hp-header {
+    position: fixed;
+    width: 85%;
+    height: 3rem;
+    z-index: 100;
+    margin-top: calc($hp-index * 0.75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(0, 0, 0, 0.5)
+    );
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 1px solid rgba(245, 245, 245, 0.1);
+
+    a {
+        img {
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.hp-scroll-header {
+    animation: hp-header-effect 1s ease-out forwards;
+}
+
+@keyframes hp-header-effect {
+    to {
+        margin-top: 0;
+        background-color: $hp-container-color;
+        border-radius: 0.5rem;
+    }
+}
+
+.hp-nav {
+    height: 100%;
+}
+
+.hp-nav-list {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hp-nav-list li {
+    position: relative;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.33s ease-out;
+
+    a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 20%;
+        width: 0;
+        height: 1px;
+        background-color: $hp-text-color;
+    }
+}
+
+@media (any-hover: hover) {
+    .hp-nav-list li:hover {
+        color: white;
+    }
+
+    .hp-nav-list li:hover::before {
+        animation: hpAnimationBottom 0.25s forwards;
+    }
+}
+
+@keyframes hpAnimationBottom {
+    to {
+        width: 110%;
+    }
+}
+
+// BURGER MENU
+.hp-burger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hp-burger {
+        display: block;
+        position: relative;
+        left: 0.2rem;
+        width: 3rem;
+        height: 100%;
+        margin: 1px;
+        z-index: 150;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $hp-container-color;
+        border: 1px solid rgba(245, 245, 245, 0.1);
+        transition: 0.5s ease;
+
+        span {
+            position: absolute;
+            width: 65%;
+            height: 1px;
+            background-color: rgba(245, 245, 245, 0.5);
+            transition: all 0.25s ease-out;
+        }
+
+        span:nth-child(1) {
+            top: 30%;
+        }
+
+        span:nth-child(3) {
+            bottom: 30%;
+        }
+    }
+}
+
+// ACTIVE BURGER MENU
+.active-hpBurger {
+    border: none;
+    background-color: transparent;
+}
+
+.active-hpBurger span {
+    background-color: crimson;
+}
+
+.active-hpBurger span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.active-hpBurger span:nth-child(3) {
+    bottom: 50%;
+    transform: rotate(-45deg);
+}
+
+.active-hpBurger span:nth-child(2) {
+    transform: translateX(0);
+    animation: hp-burger-span 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hp-burger-span {
+    90% {
+        background-color: white;
+        filter: blur(10px);
+        transform: translateX(-1000%);
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+// MOBILE MENU
+@media (max-width: 768px) {
+    .hp-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(245, 245, 245, 0.1);
+        background-image: linear-gradient(120deg, $hp-container-color, black);
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.5s ease-out;
+    }
+
+    .hp-nav-list {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            width: 100%;
+            height: 3rem;
+
+            a {
+                width: 100%;
+                padding-left: 40%;
+            }
+        }
+    }
+
+    .hp-nav-list li:hover::before {
+        display: none;
+    }
+}
+
+// ACTIVE MOBILE MENU
+.active-hpMenu {
+    opacity: 1;
+    transform: scale(1);
+}
