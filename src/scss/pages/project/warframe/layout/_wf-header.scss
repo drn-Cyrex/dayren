@@ -1,319 +1,319 @@
 .wf-header {
-    position: fixed;
-    top: 0;
-    z-index: 200;
-    height: $wf-header-size;
-    width: 100vw;
-    padding-inline: calc($wf-index * 2);
-    display: flex;
-    align-items: center;
-    background-image: linear-gradient(90deg, rgb(60, 60, 60), black);
-    box-shadow: 0px 15px 10px -6px oklch(0 0 0);
+   position: fixed;
+   top: 0;
+   z-index: 200;
+   height: $wf-header-size;
+   width: 100vw;
+   padding-inline: calc($wf-index * 2);
+   display: flex;
+   align-items: center;
+   background-image: linear-gradient(90deg, rgb(60, 60, 60), black);
+   box-shadow: 0px 15px 10px -6px oklch(0 0 0);
 }
 
 // LOGO
 .wf-logo-wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-right: auto;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   gap: 0.25rem;
+   margin-right: auto;
 
-    span {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: calc($wf-index * 1);
-    }
+   span {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: calc($wf-index * 1);
+   }
 }
 
 @media (max-width: 1200px) {
-    .wf-logo-wrapper span {
-        display: none;
-    }
+   .wf-logo-wrapper span {
+      display: none;
+   }
 }
 
 // NAVIGATION
 .wf-nav {
-    height: 100%;
-    display: flex;
-    gap: calc($wf-index * 0.5);
+   height: 100%;
+   display: flex;
+   gap: calc($wf-index * 0.5);
 }
 
 .wf-nav-list {
-    position: relative;
-    display: flex;
-    gap: calc($wf-index * 0.5);
-    cursor: pointer;
-    font-size: 1.1rem;
+   position: relative;
+   display: flex;
+   gap: calc($wf-index * 0.5);
+   cursor: pointer;
+   font-size: 1.1rem;
 }
 
 .wf-nav-list > li {
-    position: relative;
-    padding-block: 1.2rem;
-    padding-inline: 0.75rem;
-    text-align: center;
+   position: relative;
+   padding-block: 1.2rem;
+   padding-inline: 0.75rem;
+   text-align: center;
 
-    @media (any-hover: hover) {
-        &:hover .wf-nav-sublist {
-            display: block;
-        }
-    }
+   @media (any-hover: hover) {
+      &:hover .wf-nav-sublist {
+         display: block;
+      }
+   }
 }
 
 .wf-nav-list__active {
-    transition: 0.25s ease;
-    &:hover {
-        background-color: black;
-    }
+   transition: 0.25s ease;
+   &:hover {
+      background-color: black;
+   }
 }
 
 .wf-nav-sublist {
-    display: none;
-    position: absolute;
-    top: 5rem;
-    left: 50%;
-    transform: translate(-50%);
-    z-index: 10;
-    width: 12rem;
-    padding-block: 1rem;
-    border: 1px solid transparent;
-    border-image: linear-gradient(45deg, transparent, white, transparent) 1;
-    background-color: oklch(0.2 0 0);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    animation: wfShowSublist 0.25s linear forwards;
+   display: none;
+   position: absolute;
+   top: 5rem;
+   left: 50%;
+   transform: translate(-50%);
+   z-index: 10;
+   width: 12rem;
+   padding-block: 1rem;
+   border: 1px solid transparent;
+   border-image: linear-gradient(45deg, transparent, white, transparent) 1;
+   background-color: oklch(0.2 0 0);
+   backdrop-filter: blur(10px);
+   opacity: 0;
+   animation: wfShowSublist 0.25s linear forwards;
 }
 
 @keyframes wfShowSublist {
-    to {
-        top: 4rem;
-        opacity: 1;
-        transform: translate(-50%);
-    }
+   to {
+      top: 4rem;
+      opacity: 1;
+      transform: translate(-50%);
+   }
 }
 
 .wf-nav-sublist > span {
-    font-weight: 600;
+   font-weight: 600;
 }
 
 .wf-nav-sublist > li {
-    position: relative;
-    z-index: 10;
-    padding-block: 0.5rem;
-    padding-left: 10%;
-    color: rgb(180, 180, 180);
-    letter-spacing: 1px;
-    text-align: start;
-    transition: 0.25s ease;
+   position: relative;
+   z-index: 10;
+   padding-block: 0.5rem;
+   padding-left: 10%;
+   color: rgb(180, 180, 180);
+   letter-spacing: 1px;
+   text-align: start;
+   transition: 0.25s ease;
 
-    @media (any-hover: hover) {
-        &:hover {
-            color: white;
-        }
-    }
+   @media (any-hover: hover) {
+      &:hover {
+         color: white;
+      }
+   }
 }
 
 // CONTROLS > BTN
 .wf-nav-controls {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: calc($wf-index * 0.5);
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: calc($wf-index * 0.5);
 }
 
 .wf-nav-controls a {
-    position: relative;
-    z-index: 50;
-    padding-block: calc($wf-index * 0.2);
-    padding-inline: 1rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    transition: 0.5s ease;
+   position: relative;
+   z-index: 50;
+   padding-block: calc($wf-index * 0.2);
+   padding-inline: 1rem;
+   letter-spacing: 2px;
+   font-weight: 600;
+   transition: 0.5s ease;
 
-    @media (any-hover: hover) {
-        &:hover {
-            outline: 1px solid white;
-            background-color: transparent !important;
-        }
-    }
+   @media (any-hover: hover) {
+      &:hover {
+         outline: 1px solid white;
+         background-color: transparent !important;
+      }
+   }
 }
 
 .wf-nav-controls a:nth-child(1) {
-    color: white;
-    background-color: red;
+   color: white;
+   background-color: red;
 }
 .wf-nav-controls a:nth-child(2) {
-    color: black;
-    background-color: white;
+   color: black;
+   background-color: white;
 
-    @media (any-hover: hover) {
-        &:hover {
-            color: white;
-        }
-    }
+   @media (any-hover: hover) {
+      &:hover {
+         color: white;
+      }
+   }
 }
 
 .wf-dropdown-btn {
-    display: none;
+   display: none;
 }
 
 // DROPDOWN
 @media (max-width: 1024px) {
-    .wf-header {
-        padding-inline: 1rem;
-    }
+   .wf-header {
+      padding-inline: 1rem;
+   }
 
-    .wf-nav {
-        position: fixed;
-        top: calc($wf-header-size + 1rem);
-        left: 50%;
-        transform: translateX(-50%) translateY(-150%);
-        z-index: 100;
-        height: fit-content;
-        width: 90%;
-        padding-block: 2rem;
-        flex-direction: column;
-        background-color: oklch(0.2 0 0);
-        transition: 0.25s ease;
-        animation: wfNav 0.25s linear forwards;
-    }
+   .wf-nav {
+      position: fixed;
+      top: calc($wf-header-size + 1rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(-150%);
+      z-index: 100;
+      height: fit-content;
+      width: 90%;
+      padding-block: 2rem;
+      flex-direction: column;
+      background-color: oklch(0.2 0 0);
+      transition: 0.25s ease;
+      animation: wfNav 0.25s linear forwards;
+   }
 
-    .wf-nav-list {
-        flex-direction: column;
-    }
+   .wf-nav-list {
+      flex-direction: column;
+   }
 
-    .wf-nav-list > li {
-        position: relative;
-        padding-block: 0.75rem;
-        margin-inline: calc($wf-index * 3);
-        text-align: start;
+   .wf-nav-list > li {
+      position: relative;
+      padding-block: 0.75rem;
+      margin-inline: calc($wf-index * 3);
+      text-align: start;
 
-        &::before {
-            content: "◄";
-            position: absolute;
-            right: 0;
-            color: rgba(128, 128, 128, 0.5);
-        }
+      &::before {
+         content: "◄";
+         position: absolute;
+         right: 0;
+         color: rgba(128, 128, 128, 0.5);
+      }
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 10%;
-            left: 0;
-            height: 1px;
-            width: 75%;
-            background-image: linear-gradient(90deg, gray, transparent);
-        }
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: 10%;
+         left: 0;
+         height: 1px;
+         width: 75%;
+         background-image: linear-gradient(90deg, gray, transparent);
+      }
 
-        @media (any-hover: hover) {
-            &:hover:before {
-                color: red;
-            }
+      @media (any-hover: hover) {
+         &:hover:before {
+            color: red;
+         }
 
-            &:hover:after {
-                background-image: linear-gradient(90deg, red, transparent);
-            }
+         &:hover:after {
+            background-image: linear-gradient(90deg, red, transparent);
+         }
 
-            &:hover .wf-nav-sublist {
-                display: none;
-            }
-        }
-    }
+         &:hover .wf-nav-sublist {
+            display: none;
+         }
+      }
+   }
 
-    .wf-nav-controls {
-        margin-top: 1rem;
-        padding-inline: calc($wf-index * 2);
-        flex-wrap: wrap;
-        gap: 1rem;
+   .wf-nav-controls {
+      margin-top: 1rem;
+      padding-inline: calc($wf-index * 2);
+      flex-wrap: wrap;
+      gap: 1rem;
 
-        a {
-            padding-block: 0.5rem;
-            flex: 1 0 200px;
-            text-align: center;
-        }
-    }
+      a {
+         padding-block: 0.5rem;
+         flex: 1 0 200px;
+         text-align: center;
+      }
+   }
 
-    .wf-dropdown-btn {
-        display: block;
-        position: relative;
-        height: 75%;
-        width: 3.2rem;
-        height: 80%;
-        margin-right: 0.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: clip;
-        transition: 0.25s ease;
-    }
+   .wf-dropdown-btn {
+      display: block;
+      position: relative;
+      height: 75%;
+      width: 3.2rem;
+      height: 80%;
+      margin-right: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: clip;
+      transition: 0.25s ease;
+   }
 }
 
 .wf-dropdown-btn span {
-    position: absolute;
-    height: 2px;
-    width: 85%;
-    transition: 0.25s $wf-transition;
-    background-color: white;
+   position: absolute;
+   height: 2px;
+   width: 85%;
+   transition: 0.25s $wf-transition;
+   background-color: white;
 }
 
 .wf-dropdown-btn span:nth-child(1) {
-    top: 25%;
+   top: 25%;
 }
 .wf-dropdown-btn span:nth-child(3) {
-    bottom: 25%;
+   bottom: 25%;
 }
 
 // ACTIVE DROPDOWN ICON
 .wf-dropdown-active span {
-    transition: 0.25s $wf-transition;
-    background-color: red;
+   transition: 0.25s $wf-transition;
+   background-color: red;
 }
 
 .wf-dropdown-active span:nth-child(1) {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
+   top: 50%;
+   transform: translateY(-50%) rotate(45deg);
 }
 .wf-dropdown-active span:nth-child(2) {
-    display: none;
+   display: none;
 }
 .wf-dropdown-active span:nth-child(3) {
-    bottom: 50%;
-    transform: translateY(-50%) rotate(-45deg);
+   bottom: 50%;
+   transform: translateY(-50%) rotate(-45deg);
 }
 
 .wf-nav-active {
-    animation: wfNavActive 0.5s linear forwards;
+   animation: wfNavActive 0.5s linear forwards;
 }
 @keyframes wfNavActive {
-    0% {
-        transform: translateX(-50%) translateY(-150%) scale(0.5);
-    }
+   0% {
+      transform: translateX(-50%) translateY(-150%) scale(0.5);
+   }
 
-    50% {
-        transform: translateX(-50%) translateY(10%) scale(0.5);
-    }
+   50% {
+      transform: translateX(-50%) translateY(10%) scale(0.5);
+   }
 
-    100% {
-        transform: translateX(-50%) translateY(0%) scale(1);
-    }
+   100% {
+      transform: translateX(-50%) translateY(0%) scale(1);
+   }
 }
 
 @keyframes wfNav {
-    0% {
-        transform: translateX(-50%) translateY(0%) scale(1);
-    }
+   0% {
+      transform: translateX(-50%) translateY(0%) scale(1);
+   }
 
-    50% {
-        transform: translateX(-50%) translateY(10%) scale(0.5);
-    }
-    100% {
-        transform: translateX(-50%) translateY(-150%) scale(0.5);
-    }
+   50% {
+      transform: translateX(-50%) translateY(10%) scale(0.5);
+   }
+   100% {
+      transform: translateX(-50%) translateY(-150%) scale(0.5);
+   }
 }
 
 .wf-nav-list > li.wf-sublist-active .wf-nav-sublist {
-    display: block;
-    position: relative;
-    background-color: white;
+   display: block;
+   position: relative;
+   background-color: white;
 }

@@ -18,14 +18,14 @@
 }
 
 :focus-visible {
- //  outline: 2px solid $wf-color-accent;
+   //  outline: 2px solid $wf-color-accent;
    outline-offset: 3px;
 }
 
 // FONT AND TYPOGRAPHY
 
 //
-$wf-header-size: clamp(3.625rem, 3.482rem + 0.71vw, 4.125rem);
+$wf-header-size: clamp(3rem, 2.714rem + 1.43vw, 4rem);
 
 $wf-index: calc(1vw + 1vh);
 
